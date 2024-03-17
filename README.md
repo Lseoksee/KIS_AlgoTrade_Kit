@@ -4,7 +4,7 @@
 
 ## 개발 가이드
 
-파이썬 버젼: `3.12`
+파이썬 버전: `3.12`
 
 ### 1. poetry 설치
 
@@ -22,11 +22,11 @@ curl -sSL https://install.python-poetry.org | python3 -
 pip install poetry
 ```
 
--   `[유저디렉토리]\AppData\Roaming\Python\Python[버전]\Scripts` 에 환경변수 설정 해야 함
+`[유저디렉토리]\AppData\Roaming\Python\Python[버전]\Scripts` 에 환경변수 설정 해야 한다
 
 ### 2. poetry를 사용하여 패키지 설치 & 테스트
 
-> 참고 https://velog.io/@hj8853/Poetry%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0
+> 참고: [Poetry를-사용하여-가상환경-만들기](https://velog.io/@hj8853/Poetry%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0)
 
 vs code에서 디버깅시 하단 인터프리터를 poetry거로 변경 후 디버깅 하면 된다
 
