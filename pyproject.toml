@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "kis-algotrade-kit"
+version = "0.1.0"
+description = ""
+authors = ["Lseoksee <da864268@naver.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.31.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+kisATkit = "kisATkit:run"
