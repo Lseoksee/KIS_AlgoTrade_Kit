@@ -1,2 +1,3 @@
 poetry.lock
 /test/info.env
+kisATkit/__pycache__
