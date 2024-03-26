@@ -1,7 +1,11 @@
-from typing import Literal
+from typing import Dict, Literal
 import requests
 import json
 import Constant
+from threading import Thread
+from typing import TypedDict
+import time
+
 
 class kisATkit:
     def __init__(self, type: Literal["실전", "모의"], appKey: str, appSecret: str, account: str, HTS_Id: str):
@@ -31,12 +35,47 @@ class kisATkit:
         # 요청 오류시 예외 추가
         if (not req.ok):
             raise Exception(req.json())
-        
+
         data = req.json()
 
         self.type = type
+        """모의투자, 실전 투자 여부"""
         self.appKey = appKey
+        """appKey"""
         self.appSecret = appSecret
+        """appSecret"""
         self.account = account
+        """계좌 번호"""
         self.HTS_Id = HTS_Id
-        self.accessToken = data["access_token"]
+        """토큰 정보 딕셔너리"""
+        self.tokenRes: dict = data
+
+        def __refreshToken() -> None:
+            while True:
+                print("1초뒤 실행")
+                time.sleep(1)
+
+                # url = "/oauth2/tokenP"
+
+                # reqJson = {
+                #     "grant_type": "client_credentials",
+                #     "appkey": self.appKey,
+                #     "appsecret": self.appSecret
+                # }
+
+                # req = requests.post(
+                #     "{}{}".format(Constant.REAL_URL if type == "실전" else Constant.TEST_URL, url), json=reqJson)
+
+                # # 요청 오류시 예외 추가
+                # if (not req.ok):
+                #     raise Exception(req.json())
+
+                # data = req.json()
+
+                # # 요청 오류시 예외 추가
+                # if (not req.ok):
+                #     raise Exception(req.json())
+
+                # self.tokenRes = data
+
+        Thread(target=__refreshToken)
