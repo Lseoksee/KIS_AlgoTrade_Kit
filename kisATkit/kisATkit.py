@@ -1,13 +1,10 @@
-from typing import Dict, Literal
+from typing import Literal
 import requests
-import json
-import Constant
 from threading import Thread
-from typing import TypedDict
 import time
+from kisATkit import Constant
 
-
-class kisATkit:
+class KisATkit:
     def __init__(self, type: Literal["실전", "모의"], appKey: str, appSecret: str, account: str, HTS_Id: str):
         """
         한국 투자증권 API 를 사용하기 위한 토큰 키 발급 및 기본정보를 입력합니다.\n
